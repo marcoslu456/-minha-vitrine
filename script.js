@@ -68,9 +68,11 @@ function renderProducts(products) {
         const card = document.createElement('div');
         card.className = "product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col";
 
+        // Lógica de imagem: Se não tiver foto, busca o emoji da categoria no CAT_DATA
+        const categoryEmoji = CAT_DATA[p.category] || "📦";
         const imageHtml = p.image
             ? `<img src="${p.image}" alt="${p.title}" class="w-full h-36 object-cover">`
-            : `<div class="w-full h-36 bg-gray-100 flex items-center justify-center text-3xl">📦</div>`;
+            : `<div class="w-full h-36 bg-gray-100 flex items-center justify-center text-4xl">${categoryEmoji}</div>`;
 
         card.innerHTML = `
             <div class="relative">${imageHtml}</div>
