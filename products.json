@@ -1,38 +1,38 @@
 [
   {
-    "title": "Fone de Ouvido Bluetooth JBL",
+    "title": "Fone de Ouvido Bluetooth",
     "category": "Eletrônicos",
-    "image": "https://picsum.photos/400/400",
+    "image": "https://via.placeholder.com/400x400.png?text=Fone+Bluetooth",
     "url": "https://mercadolivre.com/link-1"
   },
   {
-    "title": "Air Fryer Mondial Family",
+    "title": "Air Fryer Moderna",
     "category": "Casa",
-    "image": "https://m.media-amazon.com/images/I/616W5z5MvKL._AC_SL1500_.jpg",
+    "image": "https://via.placeholder.com/400x400.png?text=Air+Fryer",
     "url": "https://mercadolivre.com/link-2"
   },
   {
-    "title": "Kit Skincare Facial",
+    "title": "Kit de Maquiagem",
     "category": "Beleza",
-    "image": "https://m.media-amazon.com/images/I/71U8H6W-sLL._AC_SL1500_.jpg",
+    "image": "https://via.placeholder.com/400x400.png?text=Kit+Beleza",
     "url": "https://mercadolivre.com/link-3"
   },
   {
-    "title": "Tênis Esportivo Nike",
+    "title": "Tênis de Corrida",
     "category": "Esporte e Lazer",
-    "image": "https://m.media-amazon.com/images/I/71uXp5+i+TL._AC_SL1500_.jpg",
+    "image": "https://via.placeholder.com/400x400.png?text=Tenis+Corrida",
     "url": "https://mercadolivre.com/link-4"
   },
   {
-    "title": "Camiseta Algodão Premium",
+    "title": "Camiseta Básica",
     "category": "Moda",
-    "image": "https://m.media-amazon.com/images/I/61Yv-L7L5xL._AC_SL1500_.jpg",
+    "image": "https://via.placeholder.com/400x400.png?text=Camiseta",
     "url": "https://mercadolivre.com/link-5"
   },
   {
-    "title": "Smartwatch Series 8",
+    "title": "Smartwatch X",
     "category": "Eletrônicos",
-    "image": "https://m.media-amazon.com/images/I/61W4z-O+RzL._AC_SL1500_.jpg",
+    "image": "https://via.placeholder.com/400x400.png?text=Smartwatch",
     "url": "https://mercadolivre.com/link-6"
   }
 ]
