@@ -46,19 +46,23 @@ function renderCategories(products) {
     });
 }
 
+// ESTA FUNÇÃO FOI TOTALMENTE REFEITA PARA NÃO OCUPAR ESPAÇO
 function renderFeaturedCategories() {
     const container = document.getElementById('featuredCategories');
     container.innerHTML = '';
 
+    // Mudamos a estrutura para uma linha única que desliza para o lado (estilo Stories)
+    container.className = "flex gap-3 overflow-x-auto pb-2 no-scrollbar";
+
     Object.entries(CAT_DATA).forEach(([name, emoji]) => {
         const card = document.createElement('div');
-        // Ultra compacto: p-2, rounded-lg, text-xs
-        card.className = "bg-white p-2 rounded-lg shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center gap-1 cursor-pointer hover:border-ml-yellow transition";
+        // Cartão pequeno e compacto
+        card.className = "bg-white min-w-[85px] p-2 rounded-xl shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center gap-1 cursor-pointer hover:border-ml-yellow transition";
         card.innerHTML = `
             <span class="text-xl">${emoji}</span>
             <h3 class="text-[10px] font-semibold text-ml-dark-blue truncate w-full">${name}</h3>
             <button onclick="filterCategory('${name}')" class="bg-ml-yellow text-ml-dark-blue text-[8px] font-bold py-0.5 px-2 rounded-full hover:bg-yellow-300 transition">
-                🛒 Ver
+                Ver
             </button>
         `;
         container.appendChild(card);
