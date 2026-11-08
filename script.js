@@ -46,18 +46,20 @@ function renderCategories(products) {
     });
 }
 
+// ESTA É A FUNÇÃO QUE FOI REDUZIDA:
 function renderFeaturedCategories() {
     const container = document.getElementById('featuredCategories');
     container.innerHTML = '';
 
     Object.entries(CAT_DATA).forEach(([name, emoji]) => {
         const card = document.createElement('div');
-        card.className = "bg-white p-4 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-ml-yellow transition";
+        // Aqui estão os tamanhos menores: p-3, rounded-xl
+        card.className = "bg-white p-3 rounded-xl shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-ml-yellow transition";
         card.innerHTML = `
-            <span class="text-4xl">${emoji}</span>
-            <h3 class="text-sm font-semibold text-ml-dark-blue">${name}</h3>
-            <button onclick="filterCategory('${name}')" class="bg-ml-yellow text-ml-dark-blue text-[10px] font-bold py-1 px-3 rounded-full flex items-center gap-1 hover:bg-yellow-300 transition">
-                🛒 Ver Ofertas
+            <span class="text-2xl">${emoji}</span>
+            <h3 class="text-xs font-semibold text-ml-dark-blue">${name}</h3>
+            <button onclick="filterCategory('${name}')" class="bg-ml-yellow text-ml-dark-blue text-[9px] font-bold py-1 px-2 rounded-full flex items-center gap-1 hover:bg-yellow-300 transition">
+                🛒 Ver
             </button>
         `;
         container.appendChild(card);
@@ -80,7 +82,6 @@ function filterCategory(category) {
         }
     });
 
-    // Rola a tela suavemente até a grade de produtos
     document.getElementById('productGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
