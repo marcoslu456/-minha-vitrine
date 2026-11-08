@@ -13,7 +13,6 @@ async function loadProducts() {
         window.allProducts = products;
 
         renderProducts(products);
-        renderCategories(products);
         renderFeaturedCategories();
 
         document.getElementById('searchInput').addEventListener('input', (e) => {
@@ -32,31 +31,12 @@ function executeSearch() {
     renderProducts(filtered);
 }
 
-function renderCategories(products) {
-    const categories = ['Todos', ...new Set(products.map(p => p.category))];
-    const container = document.getElementById('categoryFilters');
-    container.innerHTML = '';
-
-    categories.forEach(cat => {
-        const btn = document.createElement('button');
-        btn.innerText = cat;
-        btn.className = `cat-btn px-4 py-1.5 rounded-full text-xs font-medium transition whitespace-nowrap shadow-sm ${cat === 'Todos' ? 'bg-ml-blue text-white' : 'bg-white text-gray-600 border border-gray-200'}`;
-        btn.onclick = () => filterCategory(cat);
-        container.appendChild(btn);
-    });
-}
-
-// ESTA FUNÇÃO FOI TOTALMENTE REFEITA PARA NÃO OCUPAR ESPAÇO
 function renderFeaturedCategories() {
     const container = document.getElementById('featuredCategories');
     container.innerHTML = '';
 
-    // Mudamos a estrutura para uma linha única que desliza para o lado (estilo Stories)
-    container.className = "flex gap-3 overflow-x-auto pb-2 no-scrollbar";
-
     Object.entries(CAT_DATA).forEach(([name, emoji]) => {
         const card = document.createElement('div');
-        // Cartão pequeno e compacto
         card.className = "bg-white min-w-[85px] p-2 rounded-xl shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center gap-1 cursor-pointer hover:border-ml-yellow transition";
         card.innerHTML = `
             <span class="text-xl">${emoji}</span>
@@ -70,21 +50,8 @@ function renderFeaturedCategories() {
 }
 
 function filterCategory(category) {
-    if (category === 'Todos') {
-        renderProducts(window.allProducts);
-    } else {
-        const filtered = window.allProducts.filter(p => p.category === category);
-        renderProducts(filtered);
-    }
-
-    document.querySelectorAll('.cat-btn').forEach(btn => {
-        if(btn.innerText === category) {
-            btn.className = "cat-btn px-4 py-1.5 rounded-full text-xs font-medium transition whitespace-nowrap shadow-sm bg-ml-blue text-white";
-        } else {
-            btn.className = "cat-btn px-4 py-1.5 rounded-full text-xs font-medium transition whitespace-nowrap shadow-sm bg-white text-gray-600 border border-gray-200";
-        }
-    });
-
+    const filtered = window.allProducts.filter(p => p.category === category);
+    renderProducts(filtered);
     document.getElementById('productGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
